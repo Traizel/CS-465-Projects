@@ -1,0 +1,25 @@
+{
+  "name": "travlr",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "npm run test:schema && node tests/module5.js",
+    "seed": "node ./app_api/models/seed.js",
+    "verify:db": "node ./app_api/models/verify.js",
+    "test:schema": "node ./tests/module4-schema.js",
+    "test:api": "node tests/module5.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.7",
+    "debug": "~2.6.9",
+    "express": "~4.21.2",
+    "hbs": "~4.2.0",
+    "http-errors": "~2.0.0",
+    "mongoose": "^8.24.4",
+    "morgan": "~1.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

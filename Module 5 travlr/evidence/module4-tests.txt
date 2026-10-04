@@ -1,0 +1,50 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> travlr@0.0.0 test
+> node tests/smoke.js && node tests/module3.js && npm run test:schema
+
+GET / 200 12.418 ms - 4349
+GET /travel 200 3.053 ms - 4362
+GET /travel/ 200 8.627 ms - 4362
+GET /index.html 200 1.281 ms - 4182
+GET /travel.html 302 0.888 ms - 29
+GET /travel 200 1.791 ms - 4362
+GET /rooms.html 200 0.683 ms - 3460
+GET /meals.html 200 0.387 ms - 3429
+GET /news.html 200 0.446 ms - 4698
+GET /about.html 200 0.511 ms - 4286
+GET /contact.html 200 0.405 ms - 3073
+GET /css/style.css 200 0.470 ms - 10192
+GET / 200 1.686 ms - 4349
+GET /images/logo.png 200 0.344 ms - 10526
+GET /travel 200 1.631 ms - 4362
+GET /rooms.html 200 0.349 ms - 3460
+GET /meals.html 200 0.352 ms - 3429
+GET /news.html 200 0.246 ms - 4698
+GET /about.html 200 0.248 ms - 4286
+GET /contact.html 200 0.284 ms - 3073
+GET /images/sea-sound.jpg 200 0.310 ms - 55656
+GET /images/rooms.png 200 0.323 ms - 48262
+GET /images/dive-site.png 200 0.303 ms - 58387
+GET /images/food.png 200 0.303 ms - 58849
+GET /images/reef1.jpg 200 0.312 ms - 46505
+GET /images/reef2.jpg 200 0.286 ms - 45070
+GET /images/reef3.jpg 200 0.301 ms - 45273
+GET /images/first-class.jpg 200 0.259 ms - 34421
+GET /images/deluxe.jpg 200 0.286 ms - 51303
+GET /images/suite.jpg 200 0.259 ms - 32018
+GET /images/seafoods.jpg 200 0.307 ms - 48301
+GET /images/desserts.jpg 200 0.327 ms - 42893
+GET /images/buffet.jpg 200 0.326 ms - 48534
+GET /images/kayak.jpg 200 0.385 ms - 53502
+GET /missing-page 404 1.783 ms - 1314
+PASS: 10 pages, 23 unique local links/assets, dynamic titles/partials, active navigation, and 404 rendering.
+GET /travel 200 15.507 ms - 4362
+GET /travel.html 302 1.031 ms - 29
+PASS: JSON trip count, names, images, HTML descriptions, legacy redirect, changed JSON fixture, and empty collection.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> travlr@0.0.0 test:schema
+> node ./tests/module4-schema.js
+
+PASS: seed data validation, all required fields, invalid date rejection, and date serialization.
