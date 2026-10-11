@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Travlr Getaways - Module 6 CRUD",
+    "description": "Run Express (localhost:3000) and MongoDB first. POST adds a temporary trip; PUT updates; DELETE removes.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000" }, { "key": "testCode", "value": "M6DEMO261011" }],
+  "item": [
+    { "name": "GET all trips", "request": { "method": "GET", "url": "{{baseUrl}}/api/trips" } },
+    { "name": "POST add demo trip", "request": {
+      "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "body": { "mode": "raw", "raw": "{\"code\":\"{{testCode}}\",\"name\":\"Module Six Reef Escape\",\"length\":\"5 nights / 6 days\",\"start\":\"2026-12-12T12:00:00.000Z\",\"resort\":\"Demo Reef, 4 stars\",\"perPerson\":\"1250.00\",\"image\":\"reef1.jpg\",\"description\":\"<p>Module Six test trip.</p>\"}", "options": { "raw": { "language": "json" } } },
+      "url": "{{baseUrl}}/api/trips"
+    } },
+    { "name": "GET demo trip", "request": { "method": "GET", "url": "{{baseUrl}}/api/trips/{{testCode}}" } },
+    { "name": "PUT edit demo trip", "request": {
+      "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "body": { "mode": "raw", "raw": "{\"code\":\"{{testCode}}\",\"name\":\"Updated Reef Escape\",\"length\":\"5 nights / 6 days\",\"start\":\"2026-12-12T12:00:00.000Z\",\"resort\":\"Demo Reef, 4 stars\",\"perPerson\":\"1350.00\",\"image\":\"reef1.jpg\",\"description\":\"<p>Updated through PUT.</p>\"}", "options": { "raw": { "language": "json" } } },
+      "url": "{{baseUrl}}/api/trips/{{testCode}}"
+    } },
+    { "name": "DELETE demo trip", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/trips/{{testCode}}" } }
+  ]
+}
