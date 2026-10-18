@@ -1,0 +1,19 @@
+<div class="form-panel bg-white border rounded p-4">
+  <h1 class="h3">Edit Trip</h1>
+  <p class="page-intro">Update an existing trip. The code is its permanent identifier.</p>
+  <p *ngIf="loading" role="status">Loading trip details...</p>
+  <div *ngIf="error" class="alert alert-danger" role="alert">{{ error }}</div>
+  <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="save()" novalidate>
+    <div class="row g-3">
+      <div class="col-md-6"><label class="form-label" for="code">Code (read-only)</label><input id="code" class="form-control" formControlName="code" readonly></div>
+      <div class="col-md-6"><label class="form-label" for="name">Name</label><input id="name" class="form-control" formControlName="name" [class.is-invalid]="submitted && f.name.invalid"><div *ngIf="submitted && f.name.invalid" class="invalid-feedback">Name is required.</div></div>
+      <div class="col-md-6"><label class="form-label" for="length">Length</label><input id="length" class="form-control" formControlName="length" [class.is-invalid]="submitted && f.length.invalid"><div *ngIf="submitted && f.length.invalid" class="invalid-feedback">Length is required.</div></div>
+      <div class="col-md-6"><label class="form-label" for="start">Start Date</label><input id="start" type="date" class="form-control" formControlName="start" [class.is-invalid]="submitted && f.start.invalid"><div *ngIf="submitted && f.start.invalid" class="invalid-feedback">Start date is required.</div></div>
+      <div class="col-md-6"><label class="form-label" for="resort">Resort</label><input id="resort" class="form-control" formControlName="resort" [class.is-invalid]="submitted && f.resort.invalid"><div *ngIf="submitted && f.resort.invalid" class="invalid-feedback">Resort is required.</div></div>
+      <div class="col-md-6"><label class="form-label" for="perPerson">Per Person (USD)</label><input id="perPerson" type="number" min="0" step="0.01" class="form-control" formControlName="perPerson" [class.is-invalid]="submitted && f.perPerson.invalid"><div *ngIf="submitted && f.perPerson.invalid" class="invalid-feedback">Enter a nonnegative price.</div></div>
+      <div class="col-12"><label class="form-label" for="image">Image Filename</label><input id="image" class="form-control" formControlName="image" [class.is-invalid]="submitted && f.image.invalid"><div *ngIf="submitted && f.image.invalid" class="invalid-feedback">Image filename is required.</div></div>
+      <div class="col-12"><label class="form-label" for="description">Description</label><textarea id="description" class="form-control" rows="4" formControlName="description" [class.is-invalid]="submitted && f.description.invalid"></textarea><div *ngIf="submitted && f.description.invalid" class="invalid-feedback">Description is required.</div></div>
+    </div>
+    <div class="d-flex gap-2 mt-4"><button class="btn btn-primary" [disabled]="saving" type="submit">{{ saving ? 'Saving...' : 'Update Trip' }}</button><a routerLink="/" class="btn btn-outline-secondary">Cancel</a></div>
+  </form>
+</div>

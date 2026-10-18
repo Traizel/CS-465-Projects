@@ -1,0 +1,13 @@
+<p *ngIf="!auth.isLoggedIn()" class="alert alert-info">Browse trips below. <a routerLink="/login">Log in</a> to manage trips.</p>
+<div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+  <div><h1 class="h3 mb-1">Trip Listing</h1><p class="page-intro mb-0">Manage Travlr Getaways trips.</p></div>
+  <a *ngIf="auth.isLoggedIn()" class="btn btn-primary" routerLink="/add-trip">Add Trip</a>
+</div>
+<p class="text-muted" role="status">{{ message }}</p>
+<div *ngIf="error" class="alert alert-danger" role="alert">{{ error }}</div>
+<div *ngIf="!loading && trips.length === 0 && !error" class="alert alert-info">No trips found. Add a trip to get started.</div>
+<div class="row g-4">
+  <div *ngFor="let trip of trips" class="col-12 col-md-6 col-lg-4">
+    <app-trip-card [trip]="trip" (deleteRequested)="deleteTrip($event)"></app-trip-card>
+  </div>
+</div>

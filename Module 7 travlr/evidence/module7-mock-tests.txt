@@ -1,0 +1,41 @@
+◇ injected env (0) from .env
+MOCK DATABASE TEST: actual HTTP routes, authentication and model validation.
+◇ injected env (0) from .env
+GET /api/trips 200 7.052 ms - 2
+PASS Public trip listing (200)
+POST /api/trips 401 11.225 ms - 41
+PASS Reject anonymous POST (401)
+PUT /api/trips/M71792344183817 401 1.103 ms - 41
+PASS Reject anonymous PUT (401)
+DELETE /api/trips/M71792344183817 401 0.444 ms - 41
+PASS Reject anonymous DELETE (401)
+POST /api/register 400 0.770 ms - 83
+PASS Reject invalid registration (400)
+POST /api/register 201 284.234 ms - 280
+PASS Register test user (201)
+POST /api/register 409 143.124 ms - 42
+PASS Duplicate email (409)
+POST /api/login 401 138.745 ms - 45
+PASS Wrong password (401)
+POST /api/login 400 0.959 ms - 52
+PASS Missing login fields (400)
+POST /api/login 200 140.344 ms - 280
+PASS Valid login (200)
+POST /api/trips 401 1.009 ms - 60
+PASS Malformed token (401)
+POST /api/trips 401 1.288 ms - 60
+PASS Forged token (401)
+POST /api/trips 401 0.668 ms - 60
+PASS Expired token (401)
+POST /api/trips 201 2.246 ms - 240
+PASS Authenticated create (201)
+GET /api/trips/M71792344183817 200 0.516 ms - 242
+PASS Public read single trip (200)
+PUT /api/trips/M71792344183817 200 1.424 ms - 243
+PASS Authenticated update (200)
+DELETE /api/trips/M71792344183817 200 0.628 ms - 52
+PASS Authenticated delete (200)
+GET /api/trips/M71792344183817 404 0.301 ms - 29
+PASS Deleted trip is absent (404)
+All Module Seven API checks passed. Test user retained: module7-1792344183817@example.test
+PASS salted password hashing, verification, and test-trip cleanup.
