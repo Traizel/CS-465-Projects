@@ -1,0 +1,66 @@
+(node:84) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Travlr Module Five REST API
+
+→ All trips
+  GET http://localhost:3000/api/trips [200 OK, 2.14kB, 22ms]
+  ✓  HTTP 200
+  ✓  JSON response
+  ✓  Expected response body
+
+→ Gale Reef by code
+  GET http://localhost:3000/api/trips/GALR210214 [200 OK, 842B, 6ms]
+  ✓  HTTP 200
+  ✓  JSON response
+  ✓  Expected response body
+
+→ Dawsons Reef by code
+  GET http://localhost:3000/api/trips/DAWR210315 [200 OK, 878B, 4ms]
+  ✓  HTTP 200
+  ✓  JSON response
+  ✓  Expected response body
+
+→ Claires Reef by code
+  GET http://localhost:3000/api/trips/CLAR210621 [200 OK, 897B, 5ms]
+  ✓  HTTP 200
+  ✓  JSON response
+  ✓  Expected response body
+
+→ Missing trip
+  GET http://localhost:3000/api/trips/DOESNOTEXIST [404 Not Found, 271B, 5ms]
+  ✓  HTTP 404
+  ✓  JSON response
+  ✓  Expected response body
+
+→ Unknown API route
+  GET http://localhost:3000/api/unknown [404 Not Found, 279B, 2ms]
+  ✓  HTTP 404
+  ✓  JSON response
+  ✓  Expected response body
+
+→ Travel page consumes API
+  GET http://localhost:3000/travel [200 OK, 4.71kB, 35ms]
+  ✓  HTTP 200
+  ✓  Trips rendered with API links
+
+┌─────────────────────────┬──────────────────┬──────────────────┐
+│                         │         executed │           failed │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              iterations │                1 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│                requests │                7 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│            test-scripts │                7 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│      prerequest-scripts │                0 │                0 │
+├─────────────────────────┼──────────────────┼──────────────────┤
+│              assertions │               20 │                0 │
+├─────────────────────────┴──────────────────┴──────────────────┤
+│ total run duration: 187ms                                     │
+├───────────────────────────────────────────────────────────────┤
+│ total data received: 8.36kB (approx)                          │
+├───────────────────────────────────────────────────────────────┤
+│ average response time: 11ms [min: 2ms, max: 35ms, s.d.: 11ms] │
+└───────────────────────────────────────────────────────────────┘

@@ -1,0 +1,29 @@
+Module 6 package creation and local static validation
+====================================================
+Date: 2026-10-11
+Source: user-provided Module 5 travlr ZIP
+
+VERIFIED IN THIS ENVIRONMENT:
+- Controller/routes/app.js/test script passed node --check (syntax only).
+- Angular TypeScript files passed transpileModule syntax checking with global TypeScript.
+- Offline simulated-Mongoose controller smoke test passed for:
+  GET list, GET by code, POST creation, duplicate POST conflict,
+  invalid POST validation, PUT update, DELETE, and missing DELETE.
+- app_admin/angular.json, app_admin/package.json, root package.json,
+  and Postman collection parsed as valid JSON.
+
+NOT VERIFIED HERE:
+- npm install (npm registry DNS/network access unavailable).
+- Angular ng build or ng serve in a browser.
+- Express requests against a live MongoDB database.
+- Real Postman requests against live endpoints.
+- Browser screenshots requested for the assignment.
+
+For reproducible integration tests, run:
+  npm install
+  npm run test:module6
+and from app_admin:
+  npm install
+  npm run build
+
+Don't submit this note as proof of a live integration test.

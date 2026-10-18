@@ -1,0 +1,36 @@
+{
+  "name": "travlr",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "npm run test:schema && npm run test:module7",
+    "seed": "node ./app_api/models/seed.js",
+    "verify:db": "node ./app_api/models/verify.js",
+    "test:schema": "node ./tests/module4-schema.js",
+    "test:api": "node tests/module5.js",
+    "test:module6": "node tests/module6.js",
+    "test:offline": "node tests/module6-offline.js",
+    "setup:env": "node scripts/setup-env.js",
+    "test:module7": "node tests/module7.js",
+    "test:legacy": "npm run test:schema && npm run test:api && npm run test:module6",
+    "test:module7:mock": "node tests/module7-mock.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.7",
+    "debug": "~2.6.9",
+    "dotenv": "^18.0.8",
+    "express": "~4.21.2",
+    "express-jwt": "^8.5.1",
+    "hbs": "~4.2.0",
+    "http-errors": "~2.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.4",
+    "morgan": "~1.10.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
